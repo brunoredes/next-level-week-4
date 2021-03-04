@@ -1,13 +1,6 @@
-import express from 'express';
-import 'reflect-metadata';
-import './database';
-import { router } from './routes';
+import * as http from 'http2';
+import { app } from './app';
 
-const app = express();
+const server = http.createServer(app);
 
-app.use(express.json());
-app.use(router);
-
-app.listen(3333, () => console.log('server is running at port 3333'));
-
-export default app;
+server.listen(3333);
