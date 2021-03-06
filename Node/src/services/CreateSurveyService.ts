@@ -1,5 +1,5 @@
 import { Survey } from "models";
-import { SurveysRepository } from "repositories/SurveysRepository";
+import { SurveysRepository } from "../repositories/SurveysRepository";
 import { getCustomRepository } from "typeorm";
 
 class CreateSurveyService {

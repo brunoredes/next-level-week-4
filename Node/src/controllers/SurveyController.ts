@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
-import { CreateSurveyService } from "services/CreateSurveyService";
-import { ShowSurveyService } from "services/ShowSurveyService";
+import { CreateSurveyService, ShowSurveyService } from "../services";
 
 class SurveysController {
   async create(request: Request, response: Response) {
