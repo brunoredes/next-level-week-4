@@ -1,4 +1,4 @@
-import { UserRepository } from '@/repositories/userRepository';
+import { UserRepository } from '../repositories/userRepository';
 import { Request, Response } from "express";
 import { getCustomRepository } from "typeorm";
 

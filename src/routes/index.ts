@@ -1,4 +1,4 @@
-import { SurveysController, UserController } from '@/controllers';
+import { SurveysController, UserController } from '../controllers';
 import { Router } from 'express';
 
 const router = Router();

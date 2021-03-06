@@ -1,30 +1,25 @@
-import { SurveysRepository } from "@/repositories/SurveysRepository";
 import { Request, Response } from "express";
-import { getCustomRepository } from "typeorm";
+import { CreateSurveyService } from "services/CreateSurveyService";
+import { ShowSurveyService } from "services/ShowSurveyService";
 
 class SurveysController {
   async create(request: Request, response: Response) {
     const { title, description } = request.body;
 
-    const surveysRepository = getCustomRepository(SurveysRepository);
+    const createSurveyService = new CreateSurveyService();
 
-    const survey = surveysRepository.create({
-      title,
-      description
-    });
-
-    await surveysRepository.save(survey);
+    const survey = await createSurveyService.create(title, description);
 
     return response.status(201).json(survey);
   }
 
   async show(request: Request, response: Response) {
-    const surveysRepository = getCustomRepository(SurveysRepository);
-
-    const allSurveys = await surveysRepository.find();
+    const showSurveyService = new ShowSurveyService();
+    
+    const allSurveys = showSurveyService.show();
 
     return response.status(200).json(allSurveys);
   }
 }
 
-export { SurveysController }
+export { SurveysController };
