@@ -1,4 +1,3 @@
-import { SurveysController } from './SurveyController';
-import { UserController } from './UserController';
-
-export { SurveysController, UserController }
+export * from './SendMailController';
+export * from './SurveyController';
+export * from './UserController';

@@ -1,4 +1,4 @@
-import * as http from 'http2';
+import * as http from 'http';
 import { app } from './app';
 
 const server = http.createServer(app);

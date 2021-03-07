@@ -1,5 +1,3 @@
-import { CreateSurveyService } from './CreateSurveyService'
-import { ShowSurveyService } from './ShowSurveyService'
-import { CreateUserService } from './CreateUserService'
-
-export { CreateSurveyService, ShowSurveyService, CreateUserService }
+export * from './CreateSurveyService'
+export * from './ShowSurveyService'
+export * from './CreateUserService'

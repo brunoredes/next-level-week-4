@@ -1,17 +1,17 @@
-import { UserRepository } from '../repositories/userRepository';
 import { Request, Response } from "express";
-import { getCustomRepository } from "typeorm";
+import { CreateUserService } from '../services';
 
 class UserController {
   async create(request: Request, response: Response) {
     const { name, email } = request.body;
 
-    const userRepository = getCustomRepository(UserRepository)
+    const userRepository = new CreateUserService();
 
-    const newUser = await userRepository.createUser(email, name);
+    const newUser = await userRepository.create(email, name);
 
     return response.status(201).json(newUser);
   }
 }
 
 export { UserController };
+

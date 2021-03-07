@@ -5,8 +5,10 @@ import { getCustomRepository } from "typeorm";
 class ShowSurveyService {
   async show(): Promise<Survey[]> {
     const surveysRepository = getCustomRepository(SurveysRepository);
-  
-    return await surveysRepository.find();
+
+    const allSurveys = await surveysRepository.find();
+
+    return allSurveys;
   }
 }
 

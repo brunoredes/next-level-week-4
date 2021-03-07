@@ -15,7 +15,7 @@ class SurveysController {
   async show(request: Request, response: Response) {
     const showSurveyService = new ShowSurveyService();
     
-    const allSurveys = showSurveyService.show();
+    const allSurveys = await showSurveyService.show();
 
     return response.status(200).json(allSurveys);
   }
