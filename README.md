@@ -14,10 +14,14 @@
 - [![elixir-badge](https://shields.io/static/v1?label=Elixir&message=1.11&color=blue&style=for-the-badge&logo=elixir)](https://elixir-lang.org/)
 - [![kotlin-badge](https://shields.io/static/v1?label=Kotlin&message=1.30.0&color=blue&style=for-the-badge&logo=Kotlin)](https://kotlinlang.org)
  - [![postgres badge](https://shields.io/static/v1?label=PostgreSQL&message=13.2&color=blue&logo=postgresql&style=for-the-badge)](https://postgresql.org)
+ 
+ - [![postgres badge](https://shields.io/static/v1?label=SQLite&message=3.34.1&color=blue&logo=sqlite&style=for-the-badge)](www.sqlite.org)
 
 # Node Track
+this track will be done;
+<!--
 ## Framework / libs used in the project
-lorem ipsun
+-->
 
 # React Track
 this track will be done;
