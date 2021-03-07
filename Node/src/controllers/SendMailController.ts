@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
-import { SurveysRepository, SurveysUsersRepository, UserRepository } from "../repositories";
 import { getCustomRepository } from "typeorm";
+import { SurveysRepository, SurveysUsersRepository, UserRepository } from "../repositories";
+import SendMailService from "../services/mail/SendMailServices";
 
 class SendMailController {
   async execute(request: Request, response: Response) {
@@ -18,9 +19,9 @@ class SendMailController {
       });
     }
 
-    const surveyAlreadyExists = await surveyRepository.findOne({ id: surveyId });
+    const survey = await surveyRepository.findOne({ id: surveyId });
 
-    if(!surveyAlreadyExists) {
+    if (!survey) {
       return response.status(400).json({
         error: 'Survey does not exists'
       });
@@ -32,6 +33,8 @@ class SendMailController {
     });
 
     await surveysUsersRepository.save(surveyUser);
+
+    await SendMailService.execute(email, survey.title, survey.description);
 
     return response.status(200).json(surveyUser);
 
